@@ -15,3 +15,22 @@
   top: 0;
   z-index: 1;
 }
+
+.mat-icon {
+  margin-right: 15px;
+}
+
+.mat-list-item {
+  color:#3f51b5;
+  margin-top: 10px;
+}
+
+.active {
+  background-color:#3f51b5 !important;
+  color: white !important;
+  border-radius: 5px;
+}
+
+a{
+  margin-bottom: 10px;
+}
