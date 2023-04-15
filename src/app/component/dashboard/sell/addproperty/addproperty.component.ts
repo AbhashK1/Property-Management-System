@@ -21,7 +21,7 @@ export class AddpropertyComponent implements OnInit{
   id!:string;
   buttonName!:string;
 
-  types: string[] =['Flat 2BHK','Flat 3BHK', 'House'];
+  types: string[] =['Flat 2BHK','Flat 3BHK', 'House','PentHouse','Duplex'];
 
   constructor(
     private fb:FormBuilder,
@@ -42,5 +42,13 @@ export class AddpropertyComponent implements OnInit{
       location:[this.location,[Validators.required]],
       cost:[this.cost,[Validators.required]],
     })
+  }
+
+  cancelRegistration(){
+    this.dialogRef.close();
+  }
+
+  registerProperty(){
+    this.dialogRef.close(this.form.value);
   }
 }

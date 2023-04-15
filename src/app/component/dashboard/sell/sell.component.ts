@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AddpropertyComponent } from './addproperty/addproperty.component';
+import { DataService } from 'src/app/shared/service/data.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-sell',
@@ -10,6 +12,8 @@ import { AddpropertyComponent } from './addproperty/addproperty.component';
 export class SellComponent implements OnInit {
   constructor(
     public dialog : MatDialog,
+    private dataApi:DataService,
+    private _snackBar:MatSnackBar
   ) { }
   ngOnInit(): void {
   }
@@ -26,7 +30,13 @@ export class SellComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(data =>{
       if(data){
+        this.dataApi.addproperty(data);
+        this.openSnackBar("Registration Successful","Ok");
       }
     })
+  }
+
+  openSnackBar(message:string, action:string){
+    this._snackBar.open(message,action);
   }
 }

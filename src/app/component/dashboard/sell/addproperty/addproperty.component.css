@@ -6,6 +6,6 @@ mat-dialog-content{
     overflow: hidden;
 }
 
-.mat-radio-button {
-    margin-right: 15px;
+.input{
+    background-color: white;
 }

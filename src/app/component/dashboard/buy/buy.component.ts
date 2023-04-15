@@ -13,4 +13,8 @@ export class BuyComponent implements OnInit{
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
+
+  viewproperty() {
+    window.open('/dashboard/buy/viewproperty');
+  }
 }

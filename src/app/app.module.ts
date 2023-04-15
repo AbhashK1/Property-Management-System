@@ -25,6 +25,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import { AddpropertyComponent } from './component/dashboard/sell/addproperty/addproperty.component';
 import { FormsModule, ReactiveFormsModule, FormGroupDirective } from '@angular/forms';
+import { ViewpropertyComponent } from './component/dashboard/buy/viewproperty/viewproperty.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { FormsModule, ReactiveFormsModule, FormGroupDirective } from '@angular/f
     MaintainanceComponent,
     SupportComponent,
     AddpropertyComponent,
+    ViewpropertyComponent,
   ],
   imports: [
     BrowserModule,
