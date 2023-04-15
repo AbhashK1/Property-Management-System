@@ -1,0 +1,65 @@
+<h2 mat-dialog-title> {{title}}</h2>
+<mat-divider></mat-divider>
+
+<mat-dialog-content [formGroup]="form">
+    <mat-grid-list cols="2">
+        <mat-grid-tile>
+            <div>
+                <mat-form-field >
+                    <mat-label>Property Name</mat-label>
+                    <input matInput placeholder="" formControlName="p_name" required>
+                    <mat-error *ngIf="form.get('name')?.invalid || form.get('name')?.dirty || form.get('name')?.touched">Enter Valid Name</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field >
+                    <mat-label>Seller Name</mat-label>
+                    <input matInput placeholder="" formControlName="s_name" required>
+                    <mat-error *ngIf="form.get('name')?.invalid || form.get('name')?.dirty || form.get('name')?.touched">Enter Valid Name</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field >
+                    <mat-label>Location</mat-label>
+                    <input matInput placeholder="" formControlName="location" required>
+                    <mat-error>Enter Valid Location</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field >
+                    <mat-label>Mobile Number </mat-label>
+                    <input matInput placeholder="9876543210" formControlName="mobile" required>
+                    <mat-error *ngIf="form.get('mobile')?.invalid || form.get('mobile')?.dirty || form.get('mobile')?.touched">Enter Valid Mobile Number</mat-error>
+                  </mat-form-field> 
+            </div> 
+        </mat-grid-tile>
+                <mat-grid-tile>
+            <div>    
+              
+              <mat-form-field >
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="pat@example.com" formControlName="email" required>
+                <mat-error *ngIf="form.get('email')?.invalid || form.get('email')?.dirty || form.get('email')?.touched">Enter Valid EmailID</mat-error>
+              </mat-form-field>
+
+
+                  <mat-form-field class="mt-4">
+                    <mat-label>Type</mat-label>
+                    <mat-select formControlName="type" name="type">
+                      <mat-option *ngFor="let type of types" [value]="type">
+                        {{type}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field >
+                    <mat-label>Cost</mat-label>
+                    <input matInput placeholder="" formControlName="cost" required>
+                    <mat-error *ngIf="form.get('qualification')?.invalid || form.get('qualification')?.dirty || form.get('qualification')?.touched">Enter Valid Qualification</mat-error>
+                  </mat-form-field>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-dialog-content>
+
+<div mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" mat-dialog-close [disabled]="form.invalid">Register</button>
+  </div>
