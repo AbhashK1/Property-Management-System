@@ -17,12 +17,21 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { BuyComponent } from './component/dashboard/buy/buy.component';
+import { SellComponent } from './component/dashboard/sell/sell.component';
+import { MaintainanceComponent } from './component/dashboard/maintainance/maintainance.component';
+import { SupportComponent } from './component/dashboard/support/support.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SidebarComponent
+    SidebarComponent,
+    BuyComponent,
+    SellComponent,
+    MaintainanceComponent,
+    SupportComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +45,8 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
