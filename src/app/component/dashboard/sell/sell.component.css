@@ -6,6 +6,10 @@
     transform: scale(1.03);
 }
 
+table {
+    width: 100%;
+}
+
 .add-prop {
     color: black;
 }

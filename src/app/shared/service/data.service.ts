@@ -12,4 +12,8 @@ export class DataService {
       property.id=this.afs.createId();
       return this.afs.collection("Property/").add(property);
     }
+
+    getAllProperty(){
+      return this.afs.collection("Property/").snapshotChanges();
+    }
 }

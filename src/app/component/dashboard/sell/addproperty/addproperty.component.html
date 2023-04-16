@@ -61,6 +61,12 @@
             *ngIf="form.get('cost')?.invalid || form.get('cost')?.dirty || form.get('cost')?.touched">Enter
             Valid Cost</mat-error>
         </mat-form-field>
+
+        <!--mat-form-field>
+          <mat-label>Upload Images</mat-label>
+          <input matInput [value]="selectedFileNames.length ? selectedFileNames : 'Select Images'" />
+        </mat-form-field-->
+
       </div>
     </mat-grid-tile>
   </mat-grid-list>
