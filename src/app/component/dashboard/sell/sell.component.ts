@@ -7,6 +7,7 @@ import { Property } from 'src/app/shared/model/property';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { DeletepropertyComponent } from './deleteproperty/deleteproperty.component';
 
 @Component({
   selector: 'app-sell',
@@ -16,7 +17,7 @@ import { MatPaginator } from '@angular/material/paginator';
 export class SellComponent implements OnInit {
 
   propertyArr: Property[] =[];
-  displayedColumns: string[] = ['p_name', 's_name', 'location', 'type', 'cost'];
+  displayedColumns: string[] = ['p_name', 's_name', 'location', 'type', 'cost', 'action'];
   dataSource!: MatTableDataSource<Property>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -27,8 +28,30 @@ export class SellComponent implements OnInit {
     private dataApi:DataService,
     private _snackBar:MatSnackBar
   ) { }
+
   ngOnInit(): void {
     this.getAllProperty();
+  }
+
+  editproperty(row:any) {
+    if(row.id==null || row.p_name==null){
+      return;
+    }
+    const dialogConfig =new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.data=row;
+    dialogConfig.data.title="Edit Property";
+    dialogConfig.data.buttonName="Update";
+
+    const dialogRef=this.dialog.open(AddpropertyComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(data =>{
+      if(data){
+        this.dataApi.updateProperty(data);
+        this.openSnackBar("Updation Successful","Ok");
+      }
+    })
   }
 
   addproperty() {
@@ -45,6 +68,24 @@ export class SellComponent implements OnInit {
       if(data){
         this.dataApi.addproperty(data);
         this.openSnackBar("Registration Successful","Ok");
+      }
+    })
+  }
+
+  deleteproperty(row:any) {
+    const dialogConfig =new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus=true;
+    dialogConfig.data={
+      title: 'Delete Property',
+      propertyName:row.name
+    }
+    const dialogRef=this.dialog.open(DeletepropertyComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(data =>{
+      if(data){
+        this.dataApi.deleteProperty(row.id);
+        this.openSnackBar("Deletion Successful","Ok");
       }
     })
   }

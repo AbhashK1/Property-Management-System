@@ -26,6 +26,7 @@ import {MatCardModule} from '@angular/material/card';
 import { AddpropertyComponent } from './component/dashboard/sell/addproperty/addproperty.component';
 import { FormsModule, ReactiveFormsModule, FormGroupDirective } from '@angular/forms';
 import { ViewpropertyComponent } from './component/dashboard/buy/viewproperty/viewproperty.component';
+import { DeletepropertyComponent } from './component/dashboard/sell/deleteproperty/deleteproperty.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ViewpropertyComponent } from './component/dashboard/buy/viewproperty/vi
     SupportComponent,
     AddpropertyComponent,
     ViewpropertyComponent,
+    DeletepropertyComponent,
   ],
   imports: [
     BrowserModule,

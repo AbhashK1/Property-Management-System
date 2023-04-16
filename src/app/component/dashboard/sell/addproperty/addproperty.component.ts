@@ -29,13 +29,22 @@ export class AddpropertyComponent implements OnInit{
     private dialogRef : MatDialogRef<AddpropertyComponent>
   ) { 
     this.title=data.title;
+    this.id=data.id;
+    this.p_name=data.p_name;
+    this.s_name=data.s_name;
+    this.mobile=data.mobile;
+    this.email=data.email;
+    this.type=data.type;
+    this.location=data.location;
+    this.cost=data.cost;
+    this.buttonName=data.buttonName;
   }
 
   ngOnInit(): void {
     this.form=this.fb.group({
       id:[this.id,[]],
-      p_name:[this.p_name,[]],
-      s_name:[this.p_name,[]],
+      p_name:[this.p_name,[Validators.required]],
+      s_name:[this.s_name,[Validators.required]],
       mobile:[this.mobile, [Validators.required,Validators.maxLength(10), Validators.minLength(10)]],
       email:[this.email,[Validators.required, Validators.email]],
       type:[this.type,[Validators.required]],

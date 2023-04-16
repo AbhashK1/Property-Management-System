@@ -16,4 +16,12 @@ export class DataService {
     getAllProperty(){
       return this.afs.collection("Property/").snapshotChanges();
     }
+
+    updateProperty(property : any){
+      return this.afs.doc("Property/"+property.id).update(property);
+    }
+
+    deleteProperty(id:string){
+      return this.afs.doc("Property/"+id).delete();
+    }
 }
