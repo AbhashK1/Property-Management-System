@@ -15,6 +15,11 @@ export class SidebarComponent {
       map(result => result.matches),
       shareReplay()
     );
+    title = 'Property Management';
+
+    updateTitle(label: string): void {
+      this.title = label;
+    }
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
