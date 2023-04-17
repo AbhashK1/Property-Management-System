@@ -56,6 +56,12 @@
           <input matInput placeholder="pat@example.com" formControlName="email" required>
           <mat-error *ngIf="form.get('email')?.invalid || form.get('email')?.dirty || form.get('email')?.touched">Enter Valid EmailID</mat-error>
         </mat-form-field>
+
+        <!--mat-form-field>
+          <mat-label>Upload Images</mat-label>
+          <input matInput [value]="selectedFileNames.length ? selectedFileNames : 'Select Images'" />
+        </mat-form-field-->
+
       </div>
     </mat-grid-tile>
   </mat-grid-list>
@@ -63,6 +69,5 @@
 
 <div mat-dialog-actions class="mat-action " >
   <button mat-raised-button mat-dialog-close (click)="cancelRegistration()">Cancel</button>
-  <button mat-raised-button color="primary" mat-dialog-close cdkFocusInitial (click)="registerProperty()" [disabled]="form.invalid">Register</button>
-
+  <button mat-raised-button color="primary" mat-dialog-close cdkFocusInitial (click)="registerProperty()" [disabled]="form.invalid">{{buttonName}}</button>
 </div>
