@@ -22,6 +22,10 @@ import { SellComponent } from './component/dashboard/sell/sell.component';
 import { MaintainanceComponent } from './component/dashboard/maintainance/maintainance.component';
 import { SupportComponent } from './component/dashboard/support/support.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import { AddpropertyComponent } from './component/dashboard/sell/addproperty/addproperty.component';
+import { FormsModule, ReactiveFormsModule, FormGroupDirective } from '@angular/forms';
+import { ViewpropertyComponent } from './component/dashboard/buy/viewproperty/viewproperty.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     SellComponent,
     MaintainanceComponent,
     SupportComponent,
+    AddpropertyComponent,
+    ViewpropertyComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,44 +1,20 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="UTF-8">
-  <title>Sell Property</title>
-  <link rel="stylesheet" href="sell.component.css">
-</head>
-
-<body>
-  <form class="listing-form" action="#" method="post">
-    <h1 class="form-heading">List Your Property</h1>
-    <div class="form-row">
-      <label for="property-type">Property Type</label>
-      <select id="property-type" name="property-type" required>
-        <option value="">--Please select--</option>
-        <option value="house">House</option>
-        <option value="apartment">Apartment</option>
-        <option value="condo">Condo</option>
-      </select>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 mt-3">
+            <mat-card class="add-prop text-center" (click) = "addproperty()">
+                <mat-card-content>
+                    <mat-icon>add_business</mat-icon><br>
+                    List Property
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-sm-6 col-md-4 mt-3">
+            <mat-card class="add-prop text-center">
+                <mat-card-content>
+                    <mat-icon>edit_location</mat-icon><br>
+                    Edit Listed Property
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
-    <div class="form-row">
-      <label for="location">Location</label>
-      <input type="text" id="location" name="location" placeholder="Enter property location" required>
-    </div>
-    <div class="form-row">
-      <label for="price">Price</label>
-      <input type="number" id="price" name="price" placeholder="Enter property price" required>
-    </div>
-    <div class="form-row">
-      <label for="description">Description</label>
-      <textarea id="description" name="description" placeholder="Enter property description" required></textarea>
-    </div>
-    <div class="form-row">
-      <label for="image">Image</label>
-      <input type="file" id="image" name="image" accept="image/*" required>
-    </div>
-    <div class="form-row">
-      <button type="submit" class="btn-submit">Submit</button>
-    </div>
-  </form>
-</body>
-
-</html>
+</div>

@@ -1,0 +1,68 @@
+<h2 mat-dialog-title><mat-icon>library_books</mat-icon>  {{title}}</h2>
+<mat-divider></mat-divider>
+<mat-dialog-content [formGroup]="form">
+  <mat-grid-list cols="2">
+    <mat-grid-tile class="property-details">
+      <h6 mat-dialog-title><mat-icon>home</mat-icon>Property Details</h6> 
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label >Property Name</mat-label>
+          <input matInput placeholder="" formControlName="p_name" class="mat-form" required>
+          <mat-error *ngIf="form.get('p_name')?.invalid || form.get('p_name')?.dirty || form.get('p_name')?.touched">Enter Valid Name</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+          <mat-label>Location</mat-label>
+          <input matInput placeholder="" formControlName="location" required>
+          <mat-error>Enter Valid Location</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Type</mat-label>
+          <mat-select formControlName="type" name="type">
+            <mat-option *ngFor="let type of types" [value]="type">
+              {{type}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Cost</mat-label>
+          <input matInput placeholder="" formControlName="cost" required>
+          <mat-error
+            *ngIf="form.get('cost')?.invalid || form.get('cost')?.dirty || form.get('cost')?.touched">Enter Valid Cost</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <h6 mat-dialog-title ><mat-icon>person</mat-icon>Seller Details</h6>
+      <div>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Seller Name</mat-label>
+          <input matInput placeholder="" formControlName="s_name" required>
+          <mat-error *ngIf="form.get('s_name')?.invalid || form.get('s_name')?.dirty || form.get('s_name')?.touched">Enter Valid Name</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Mobile Number </mat-label>
+          <input matInput placeholder="9876543210" formControlName="mobile" required>
+          <mat-error
+            *ngIf="form.get('mobile')?.invalid || form.get('mobile')?.dirty || form.get('mobile')?.touched">Enter Valid Mobile Number</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="pat@example.com" formControlName="email" required>
+          <mat-error *ngIf="form.get('email')?.invalid || form.get('email')?.dirty || form.get('email')?.touched">Enter Valid EmailID</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-dialog-content>
+
+<div mat-dialog-actions class="mat-action " >
+  <button mat-raised-button mat-dialog-close (click)="cancelRegistration()">Cancel</button>
+  <button mat-raised-button color="primary" mat-dialog-close cdkFocusInitial (click)="registerProperty()" [disabled]="form.invalid">Register</button>
+
+</div>
