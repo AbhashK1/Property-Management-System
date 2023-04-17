@@ -1,5 +1,5 @@
 mat-dialog-content{
-    width: 700px;
+    width: 950px;
 }
 
 .mat-grid-list {
@@ -8,4 +8,17 @@ mat-dialog-content{
 
 .input{
     background-color: white;
+}
+button{
+    border-radius: 16px;
+
+}
+.mat-action{
+    margin-bottom: 25px;
+    margin-left:20px
+}
+.property-details {
+    border-right: 1px solid #ccc;
+}
+.seller-d{
 }

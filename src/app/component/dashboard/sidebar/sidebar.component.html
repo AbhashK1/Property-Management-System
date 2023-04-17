@@ -6,11 +6,11 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-divider></mat-divider>
     <mat-nav-list>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/home"><mat-icon>home</mat-icon>Home</a>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/buy"><mat-icon>store</mat-icon>Buy Property</a>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/sell"><mat-icon>savings</mat-icon>Sell Property</a>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/maintainance"><mat-icon>contact_emergency</mat-icon>Maintainance</a>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/support"><mat-icon>contact_support</mat-icon>Support</a>
+      <a mat-list-item routerLinkActive="active" routerLink="dashboard/home" (click)="updateTitle('Home')"><mat-icon>home</mat-icon>Home</a>
+      <a mat-list-item routerLinkActive="active" routerLink="dashboard/buy" (click)="updateTitle('Buy Property')"><mat-icon>store</mat-icon>Buy Property</a>
+      <a mat-list-item routerLinkActive="active" routerLink="dashboard/sell" (click)="updateTitle('Sell Property')"><mat-icon>savings</mat-icon>Sell Property</a>
+      <a mat-list-item routerLinkActive="active" routerLink="dashboard/maintainance" (click)="updateTitle('Maintenance')"><mat-icon>contact_emergency</mat-icon>Maintainance</a>
+      <a mat-list-item routerLinkActive="active" routerLink="dashboard/support" (click)="updateTitle('Support')"><mat-icon>contact_support</mat-icon>Support</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -23,7 +23,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Property Management</span>
+      <span>{{ title }}</span>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>
