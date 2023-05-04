@@ -21,16 +21,16 @@
 }
 
 .mat-list-item {
-  color:#3f51b5;
-  margin-top: 10px;
+  color:#808ee0;
 }
 
 .active {
-  background-color:#3f51b5 !important;
+  background-color:#808ee0 !important;
   color: white !important;
   border-radius: 5px;
 }
 
-a{
-  margin-bottom: 10px;
+mat-sidenav {
+  background: #1967c1;
+  color: white;
 }
