@@ -1,11 +1,11 @@
-<div class="container">
-  <h2 style="text-align: center;font-size: xx-large;">Need Help?</h2>
-  <h2 style="text-align: center;font-size:large;">Fill the form and our support team will get back to you as soon as possible!
+<div class="container" style="background-color: #673ab7;padding:20px;border-radius: 12px">
+  <h2 style="text-align: center;font-size: xx-large;color: white;">Need Help?</h2>
+  <h2 style="text-align: center;font-size:large;color: white;">Fill the form and our support team will get back to you as soon as possible!
   </h2>
 
 
   <form [formGroup]="contactForm" class="form-group">
-<mat-form-field>
+<mat-form-field >
   <mat-label>Your Name</mat-label>
   <input matInput matInput formControlName="name">
   <mat-error
@@ -43,7 +43,7 @@
   <mat-error
 *ngIf="contactForm.get('name')?.invalid || contactForm.get('cost')?.dirty || contactForm.get('name')?.touched">Message is required</mat-error>
 </mat-form-field>
-<button type="reset" mat-raised-button color="primary" [disabled]="contactForm.invalid" (click)="submitData(contactForm.value)">Send Message</button>
+<button type="reset" mat-raised-button color="primary" [disabled]="contactForm.invalid" (click)="submitData(contactForm.value)" style="color: white;">Send Message</button>
 
 <p *ngIf="isSubmit" class="submitMessage">{{submitMessage}}</p>
 </form>
