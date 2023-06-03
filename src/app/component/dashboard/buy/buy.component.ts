@@ -4,6 +4,7 @@ import { Property } from 'src/app/shared/model/property';
 import { DataService } from 'src/app/shared/service/data.service';
 
 export interface Tile{
+  id:string;
   cost:string;
   location:string;
 }
@@ -25,6 +26,10 @@ export class BuyComponent implements OnInit{
     this.getAllProperty();
   }
 
+  viewproperty(id:any){
+    window.open('/dashboard/sell/'+id,'_blank');
+  }
+
   getAllProperty(){
     this.dataApi.getAllProperty().subscribe(res =>{
       this.propertyArr=res.map((e:any)=>{
@@ -34,9 +39,10 @@ export class BuyComponent implements OnInit{
       })
       //console.log(this.propertyArr);
       for(let i=0;i<this.propertyArr.length;i++){
+        var id=this.propertyArr[i].id;
         var cost=this.propertyArr[i].cost;
         var location=this.propertyArr[i].location;
-        this.tiles.push({cost,location});
+        this.tiles.push({id,cost,location});
       }
     })
   }

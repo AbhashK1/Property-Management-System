@@ -13,7 +13,7 @@
     <div class="row">
       <div class="col-lg-12 col-md-4 mt-3">
         <mat-grid-list cols="3" [gutterSize]="'10px'">
-          <mat-grid-tile *ngFor="let tile of tiles">
+          <mat-grid-tile *ngFor="let tile of tiles" (click)="viewproperty(tile.id)">
             <div class="image-container">
               <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvcGVydHl8ZW58MHx8MHx8&w=1000&q=80"><br>
