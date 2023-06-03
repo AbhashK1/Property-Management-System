@@ -16,6 +16,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatMenuModule} from '@angular/material/menu';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
+import {MatBadgeModule} from '@angular/material/badge';
 @NgModule({
   declarations: [],
   imports: [
@@ -35,7 +36,8 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
     MatTableModule,
     MatPaginatorModule,
     MatMenuModule,
-    MaterialFileInputModule
+    MaterialFileInputModule,
+    MatBadgeModule
   ],
   exports:[
     MatGridListModule,
@@ -54,7 +56,8 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
     MatTableModule,
     MatPaginatorModule,
     MatMenuModule,
-    MaterialFileInputModule
+    MaterialFileInputModule,
+    MatBadgeModule
   ]
 })
 export class MaterialModule { }

@@ -32,10 +32,10 @@ export class EnquiryComponent implements OnInit{
 
   delete(id:any){
     console.log(id);
-    if (confirm("Press OK to delete") == true) {
+    //if (confirm("Press OK to delete") == true) {
       this.dataApi.deleteenquiry(id);
-    } else {
-    }
+    //} else {
+    //}
   }
 
   reply(email:string){
