@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { AngularFirestore,AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { DataService } from 'src/app/shared/service/data.service';
 
 @Component({
   selector: 'app-support',
@@ -17,29 +18,23 @@ export class SupportComponent implements OnInit {
   private myForm!:AngularFirestoreCollection<any>;
 
 
-  constructor(private formBuilder: FormBuilder,private firestore:AngularFirestore) {
-
+  constructor(
+    private formBuilder: FormBuilder,
+    private firestore:AngularFirestore,
+    private dataApi:DataService) {
   }
 
   ngOnInit() {
-    this.myForm = this.firestore.collection('enquiry')
     this.contactForm = this.formBuilder.group({
       name: [null, [Validators.required, Validators.minLength(2)]],
       email: [null, [Validators.required, Validators.email]],
       message : [null,Validators.required],
       subject:[null,Validators.required]
-
     });
   }
 
   submitData(value:any){
-    this.myForm.add(value).then(res=>{
-      this.submitMessage='Submitted Successfully';
-    })
-    .catch(err=>{
-      console.log(err);
-    })
-
+    this.dataApi.addenquiry(value);
     this.isSubmit = true;
     this.submitMessage = 'Submitted Successfully';
     setTimeout(()=>{

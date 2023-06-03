@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from 'src/environments/environment.prod';
 import { MaterialModule } from './material/material/material.module';
-import { HomeComponent } from './component/dashboard/home/home.component';
 import { SidebarComponent } from './component/dashboard/sidebar/sidebar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -28,11 +27,11 @@ import { AddpropertyComponent } from './component/dashboard/sell/addproperty/add
 import { FormsModule, ReactiveFormsModule, FormGroupDirective } from '@angular/forms';
 import { DeletepropertyComponent } from './component/dashboard/sell/deleteproperty/deleteproperty.component';
 import { ViewpropertyComponent } from './component/dashboard/sell/viewproperty/viewproperty.component';
+import { EnquiryComponent } from './component/dashboard/enquiry/enquiry.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     SidebarComponent,
     BuyComponent,
     SellComponent,
@@ -40,6 +39,7 @@ import { ViewpropertyComponent } from './component/dashboard/sell/viewproperty/v
     AddpropertyComponent,
     ViewpropertyComponent,
     DeletepropertyComponent,
+    EnquiryComponent,
   ],
   imports: [
     BrowserModule,
