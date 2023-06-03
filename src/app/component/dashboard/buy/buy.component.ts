@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { Property } from 'src/app/shared/model/property';
+import { DataService } from 'src/app/shared/service/data.service';
+
+export interface Tile{
+  cost:string;
+  location:string;
+}
 
 @Component({
   selector: 'app-buy',
@@ -7,14 +14,30 @@ import {MatGridListModule} from '@angular/material/grid-list';
   styleUrls: ['./buy.component.css']
 })
 export class BuyComponent implements OnInit{
+
+  propertyArr: Property[] =[];
+  tiles: Tile[] = [];
   constructor(
-    public grid:MatGridListModule
+    public grid:MatGridListModule,
+    private dataApi:DataService,
   ){}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.getAllProperty();
   }
 
-  viewproperty() {
-    window.open('/dashboard/buy/viewproperty');
+  getAllProperty(){
+    this.dataApi.getAllProperty().subscribe(res =>{
+      this.propertyArr=res.map((e:any)=>{
+        const data = e.payload.doc.data();
+        data.id=e.payload.doc.id;
+        return data;
+      })
+      //console.log(this.propertyArr);
+      for(let i=0;i<this.propertyArr.length;i++){
+        var cost=this.propertyArr[i].cost;
+        var location=this.propertyArr[i].location;
+        this.tiles.push({cost,location});
+      }
+    })
   }
 }

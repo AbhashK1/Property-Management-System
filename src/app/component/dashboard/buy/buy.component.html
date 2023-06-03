@@ -13,92 +13,16 @@
     <div class="row">
       <div class="col-lg-12 col-md-4 mt-3">
         <mat-grid-list cols="3" [gutterSize]="'10px'">
-          <mat-grid-tile>
+          <mat-grid-tile *ngFor="let tile of tiles">
             <div class="image-container">
               <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvcGVydHl8ZW58MHx8MHx8&w=1000&q=80"><br>
             </div>
             <div class="name-container"><div class="card-body">
-              <p class="card-title">20K</p>
-              <p class="card-text">Malsi, Dehradun</p>
+              <p class="card-title">${{tile.cost}}</p>
+              <p class="card-text">{{tile.location}}</p>
             </div></div>
           </mat-grid-tile>
-          <mat-grid-tile>
-            <div class="image-container">
-              <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvcGVydHl8ZW58MHx8MHx8&w=1000&q=80"><br>
-            </div>
-            <div class="name-container"><div class="card-body">
-              <p class="card-title">20K</p>
-              <p class="card-text">Malsi, Dehradun</p>
-            </div></div>
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <div class="image-container">
-              <img
-                src="https://media.istockphoto.com/id/656057650/photo/3d-rendering-minimal-black-cubic-house-in-summer.jpg?s=170667a&w=0&k=20&c=jSADKIX_T220HzSGEn8HSx494N5wEUh8NSBZ-xzH6tI="><br>
-            </div>
-            <div class="name-container"><div class="card-body">
-              <p class="card-title">20K</p>
-              <p class="card-text">Malsi, Dehradun</p>
-            </div></div>
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <div class="image-container">
-              <img
-                src="https://images.unsplash.com/photo-1598228723793-52759bba239c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
-                height="200px" width="300px" style="vertical-align: top;"><br>
-            </div>
-            <div class="name-container">Property</div>
-          </mat-grid-tile>
-          <mat-grid-tile><div class="image-container">
-            <img
-              src="https://www.bankrate.com/2019/08/27171217/5-tips-for-financing-for-investment-property.jpeg?auto=webp&optimize=high&crop=16:9"
-              height="200px" width="300px" style="vertical-align: top;"><br>
-          </div>
-          <div class="name-container">Property</div></mat-grid-tile>
-          <mat-grid-tile><div class="image-container">
-            <img
-              src="https://expertphotography.b-cdn.net/wp-content/uploads/2020/05/outdoor-pool-photo.jpg"
-              height="200px" width="300px" style="vertical-align: top;"><br>
-          </div>
-          <div class="name-container">Property</div></mat-grid-tile>
-          <mat-grid-tile><div class="image-container">
-            <img
-              src="https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?cs=srgb&dl=pexels-pixabay-280222.jpg&fm=jpg"
-              height="200px" width="300px" style="vertical-align: top;"><br>
-          </div>
-          <div class="name-container">Property</div></mat-grid-tile>
-          <mat-grid-tile><div class="image-container">
-            <img
-              src="https://thumbs.dreamstime.com/b/hosing-real-estate-property-india-variety-housing-real-estate-india-apartments-villas-gated-communities-209589450.jpg"
-              height="200px" width="300px" style="vertical-align: top;"><br>
-          </div>
-          <div class="name-container">Property</div></mat-grid-tile>
-          <mat-grid-tile><div class="image-container">
-            <img
-              src="https://www.mckissock.com/wp-content/uploads/2016/11/GettyImages-1151832961.jpg"
-              height="200px" width="300px" style="vertical-align: top;"><br>
-          </div>
-          <div class="name-container">Property</div></mat-grid-tile>
-          <mat-grid-tile><div class="image-container">
-            <img
-              src="https://images.pexels.com/photos/439391/pexels-photo-439391.jpeg?cs=srgb&dl=pexels-sevenstorm-juhaszimrus-439391.jpg&fm=jpg"
-              height="200px" width="300px" style="vertical-align: top;"><br>
-          </div>
-          <div class="name-container">Property</div></mat-grid-tile>
-          <mat-grid-tile><div class="image-container">
-            <img
-              src="https://teja12.kuikr.com/is/a/c/880x425/public/images/apartments/original_img/k9yqlp.gif"
-              height="200px" width="300px" style="vertical-align: top;"><br>
-          </div>
-          <div class="name-container">Property</div></mat-grid-tile>
-          <mat-grid-tile><div class="image-container">
-            <img
-              src="https://www.investopedia.com/thmb/bfHtdFUQrl7jJ_z-utfh8w1TMNA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/houses_and_land-5bfc3326c9e77c0051812eb3.jpg"
-              height="200px" width="300px" style="vertical-align: top;"><br>
-          </div>
-          <div class="name-container">Property</div></mat-grid-tile>
         </mat-grid-list>
       </div>
     </div>
