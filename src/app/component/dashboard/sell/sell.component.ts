@@ -90,6 +90,10 @@ export class SellComponent implements OnInit {
     })
   }
 
+  viewproperty(row:any){
+    window.open('/dashboard/sell/'+row.id,'_blank');
+  }
+
   getAllProperty(){
     this.dataApi.getAllProperty().subscribe(res =>{
       this.propertyArr=res.map((e:any)=>{

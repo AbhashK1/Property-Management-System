@@ -1,6 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FileUploadService } from 'src/app/shared/service/fileuploadservice.service';
+import { FileUpload } from 'src/app/shared/model/fileupload';
 
 @Component({
   selector: 'app-addproperty',
@@ -19,12 +21,16 @@ export class AddpropertyComponent implements OnInit{
   cost!:string;
   type!:string;
   id!:string;
+  url!:string;
   buttonName!:string;
+  selectedFiles?: FileList;
+  currentFileUpload?: FileUpload;
 
   types: string[] =['Flat 2BHK','Flat 3BHK', 'House','PentHouse','Duplex'];
 
   constructor(
     private fb:FormBuilder,
+    private uploadService:FileUploadService,
     @Inject(MAT_DIALOG_DATA) data:any,
     private dialogRef : MatDialogRef<AddpropertyComponent>
   ) { 
@@ -53,11 +59,34 @@ export class AddpropertyComponent implements OnInit{
     })
   }
 
+  selectFile(event: any): void {
+    this.selectedFiles = event.target.files;
+  }
+
+  upload():void{
+    if(this.selectedFiles){
+      const file:File | null = this.selectedFiles.item(0);
+      this.selectedFiles=undefined;
+      if(file){
+        this.currentFileUpload=new FileUpload(file);
+        this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(
+          percentage=>{
+            console.log(percentage);
+          },
+          error =>{
+            console.log(error);
+          }
+        )
+      }
+    }
+  }
+
   cancelRegistration(){
     this.dialogRef.close();
   }
 
   registerProperty(){
+    this.upload();
     this.dialogRef.close(this.form.value);
   }
 }

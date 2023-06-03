@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,14 +21,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { BuyComponent } from './component/dashboard/buy/buy.component';
 import { SellComponent } from './component/dashboard/sell/sell.component';
-import { MaintainanceComponent } from './component/dashboard/maintainance/maintainance.component';
 import { SupportComponent } from './component/dashboard/support/support.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import { AddpropertyComponent } from './component/dashboard/sell/addproperty/addproperty.component';
 import { FormsModule, ReactiveFormsModule, FormGroupDirective } from '@angular/forms';
-import { ViewpropertyComponent } from './component/dashboard/buy/viewproperty/viewproperty.component';
 import { DeletepropertyComponent } from './component/dashboard/sell/deleteproperty/deleteproperty.component';
+import { ViewpropertyComponent } from './component/dashboard/sell/viewproperty/viewproperty.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,6 @@ import { DeletepropertyComponent } from './component/dashboard/sell/deleteproper
     SidebarComponent,
     BuyComponent,
     SellComponent,
-    MaintainanceComponent,
     SupportComponent,
     AddpropertyComponent,
     ViewpropertyComponent,
@@ -58,6 +58,8 @@ import { DeletepropertyComponent } from './component/dashboard/sell/deleteproper
     MatCardModule,
     ReactiveFormsModule,
     FormsModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

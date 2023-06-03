@@ -7,4 +7,5 @@ export interface Property {
     email: string;
     cost: string;
     type: string;
+    url:string;
 }
