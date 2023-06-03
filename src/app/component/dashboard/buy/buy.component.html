@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>My Page</title>
-  <link rel="stylesheet" href="buy.component.css">
+  <!--link rel="stylesheet" href="buy.component.css"-->
 </head>
 
 <body>
@@ -13,26 +13,35 @@
     <div class="row">
       <div class="col-lg-12 col-md-4 mt-3">
         <mat-grid-list cols="3" [gutterSize]="'10px'">
-          <mat-grid-tile (click)="viewproperty()">
+          <mat-grid-tile>
             <div class="image-container">
               <img
-                src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"><br>
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvcGVydHl8ZW58MHx8MHx8&w=1000&q=80"><br>
             </div>
-            <div class="name-container">Property</div>
+            <div class="name-container"><div class="card-body">
+              <p class="card-title">20K</p>
+              <p class="card-text">Malsi, Dehradun</p>
+            </div></div>
           </mat-grid-tile>
           <mat-grid-tile>
             <div class="image-container">
               <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvcGVydHl8ZW58MHx8MHx8&w=1000&q=80"><br>
             </div>
-            <div class="name-container">Property</div>
+            <div class="name-container"><div class="card-body">
+              <p class="card-title">20K</p>
+              <p class="card-text">Malsi, Dehradun</p>
+            </div></div>
           </mat-grid-tile>
           <mat-grid-tile>
             <div class="image-container">
               <img
                 src="https://media.istockphoto.com/id/656057650/photo/3d-rendering-minimal-black-cubic-house-in-summer.jpg?s=170667a&w=0&k=20&c=jSADKIX_T220HzSGEn8HSx494N5wEUh8NSBZ-xzH6tI="><br>
             </div>
-            <div class="name-container">Property</div>
+            <div class="name-container"><div class="card-body">
+              <p class="card-title">20K</p>
+              <p class="card-text">Malsi, Dehradun</p>
+            </div></div>
           </mat-grid-tile>
           <mat-grid-tile>
             <div class="image-container">
@@ -94,7 +103,6 @@
       </div>
     </div>
   </div>
-
 </body>
 
 </html>

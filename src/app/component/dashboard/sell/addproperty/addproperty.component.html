@@ -32,6 +32,7 @@
           <mat-error
             *ngIf="form.get('cost')?.invalid || form.get('cost')?.dirty || form.get('cost')?.touched">Enter Valid Cost</mat-error>
         </mat-form-field>
+
       </div>
     </mat-grid-tile>
     <mat-grid-tile>
@@ -40,27 +41,28 @@
 
         <mat-form-field appearance="outline">
           <mat-label>Seller Name</mat-label>
-          <input matInput placeholder="" formControlName="s_name" required>
+          <input matInput formControlName="s_name" required>
           <mat-error *ngIf="form.get('s_name')?.invalid || form.get('s_name')?.dirty || form.get('s_name')?.touched">Enter Valid Name</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Mobile Number </mat-label>
-          <input matInput placeholder="9876543210" formControlName="mobile" required>
+          <input matInput formControlName="mobile" required>
           <mat-error
             *ngIf="form.get('mobile')?.invalid || form.get('mobile')?.dirty || form.get('mobile')?.touched">Enter Valid Mobile Number</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
-          <input matInput placeholder="pat@example.com" formControlName="email" required>
+          <input matInput formControlName="email" required>
           <mat-error *ngIf="form.get('email')?.invalid || form.get('email')?.dirty || form.get('email')?.touched">Enter Valid EmailID</mat-error>
         </mat-form-field>
 
-        <!--mat-form-field>
-          <mat-label>Upload Images</mat-label>
-          <input matInput [value]="selectedFileNames.length ? selectedFileNames : 'Select Images'" />
-        </mat-form-field-->
+        <mat-form-field>
+          <mat-label>Image</mat-label>
+          <ngx-mat-file-input formControlName="currentFileUpload" placeholder="JPEG Only" [accept]="'.jpg'" (change)="selectFile($event)"></ngx-mat-file-input>
+          <mat-icon matSuffix>folder</mat-icon>
+        </mat-form-field>
 
       </div>
     </mat-grid-tile>

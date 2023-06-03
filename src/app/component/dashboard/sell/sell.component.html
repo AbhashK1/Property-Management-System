@@ -8,14 +8,6 @@
                 </mat-card-content>
             </mat-card>
         </div>
-        <div class="col-sm-6 col-md-4 mt-3">
-            <mat-card class="add-prop text-center">
-                <mat-card-content>
-                    <mat-icon>edit_location</mat-icon><br>
-                    Edit Listed Property
-                </mat-card-content>
-            </mat-card>
-        </div>
     </div>
     <br>
 
@@ -63,7 +55,7 @@
                     <mat-icon>more_vert</mat-icon>
                   </button>
                   <mat-menu #menu="matMenu">
-                    <button mat-menu-item>
+                    <button mat-menu-item (click)="viewproperty(row)">
                       <mat-icon>open_in_new</mat-icon>
                       <span>View</span>
                     </button>

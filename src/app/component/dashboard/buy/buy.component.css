@@ -30,6 +30,17 @@ mat-grid-tile .image-container {
   width: 100%;
 }
  .name-container {
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: skyblue;
+  padding: 10px;
+  text-align: center;
+  color:black;
+}
+
+.loc-container {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -38,4 +49,12 @@ mat-grid-tile .image-container {
   padding: 10px;
   text-align: center;
   color:white;
+}
+
+.image-cont{
+  display: flex;
+}
+
+.card-body{
+  margin-left: 2px;
 }
