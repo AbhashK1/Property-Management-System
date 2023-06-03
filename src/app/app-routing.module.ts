@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './component/dashboard/home/home.component';
 import { BuyComponent } from './component/dashboard/buy/buy.component';
 import { SellComponent } from './component/dashboard/sell/sell.component';
-import { MaintainanceComponent } from './component/dashboard/maintainance/maintainance.component';
 import { SupportComponent } from './component/dashboard/support/support.component';
 import { ViewpropertyComponent } from './component/dashboard/sell/viewproperty/viewproperty.component';
 
@@ -14,7 +13,6 @@ const routes: Routes = [
     {path: 'buy', component: BuyComponent},
     {path: 'sell', component: SellComponent},
     {path: 'sell/:id', component: ViewpropertyComponent},
-    {path: 'maintainance', component: MaintainanceComponent},
     {path: 'support', component: SupportComponent},
   ]}
 ];

@@ -21,7 +21,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { BuyComponent } from './component/dashboard/buy/buy.component';
 import { SellComponent } from './component/dashboard/sell/sell.component';
-import { MaintainanceComponent } from './component/dashboard/maintainance/maintainance.component';
 import { SupportComponent } from './component/dashboard/support/support.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
@@ -37,7 +36,6 @@ import { ViewpropertyComponent } from './component/dashboard/sell/viewproperty/v
     SidebarComponent,
     BuyComponent,
     SellComponent,
-    MaintainanceComponent,
     SupportComponent,
     AddpropertyComponent,
     ViewpropertyComponent,
