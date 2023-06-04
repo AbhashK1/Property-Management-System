@@ -12,22 +12,27 @@ export class AuthService {
     private router : Router
   ) { }
 
-  login(username : string, password : string) {
-    this.auth
-      .signInWithEmailAndPassword(username ,password)
-      .then(result => {
-        this.auth.authState.subscribe(async user => {
-          if(user) {
-            localStorage.setItem('user', JSON.stringify(user));
-            await this.router.navigate(['/dashboard/buy']);
-            location.reload();
-          }
+  login(username: string, password: string): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      this.auth
+        .signInWithEmailAndPassword(username, password)
+        .then(result => {
+          this.auth.authState.subscribe(async user => {
+            if (user) {
+              localStorage.setItem('user', JSON.stringify(user));
+              await this.router.navigate(['/dashboard/buy']);
+              location.reload();
+              resolve(true); // Credentials are correct
+            }
+          });
         })
-      })
-      .catch( error => {
-        console.log(error);
-      })
+        .catch(error => {
+          console.log(error);
+          resolve(false); // Credentials are wrong
+        });
+    });
   }
+  
 
   async logout() {
     localStorage.setItem('user','null');
