@@ -24,4 +24,8 @@ export class DataService {
     deleteProperty(id:string){
       return this.afs.doc("Property/"+id).delete();
     }
+
+    getPropertyById(id:string){
+      return this.afs.doc("Property/"+id).valueChanges();
+    }
 }
