@@ -1,15 +1,16 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="sidenav-container" >
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+      [opened]="(isHandset$ | async) === false"
+      class="d-flex flex-column flex-shrink-0 p-3">
+    <mat-toolbar style="background-color: #1967c1;">Navigation</mat-toolbar>
     <mat-divider></mat-divider>
-    <mat-nav-list>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/buy" (click)="updateTitle('Buy Property')"><mat-icon>store</mat-icon>Buy Property</a>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/sell" (click)="updateTitle('Sell Property')"><mat-icon>savings</mat-icon>Sell Property</a>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/support" (click)="updateTitle('Support')"><mat-icon>contact_support</mat-icon>Support</a>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/enquiry" (click)="updateTitle('Enquiry')"><mat-icon>contact_support</mat-icon>Enquiry</a>
+    <mat-nav-list class="nav nav-pills flex-column mb-auto">
+      <a mat-list-item routerLinkActive="active" routerLink="dashboard/buy" (click)="updateTitle('Buy Property')"><mat-icon class="list-icon">store</mat-icon>Buy Property</a>
+      <a mat-list-item routerLinkActive="active" routerLink="dashboard/sell" (click)="updateTitle('Sell Property')"><mat-icon class="list-icon">savings</mat-icon>Sell Property</a>
+      <a mat-list-item routerLinkActive="active" routerLink="dashboard/support" (click)="updateTitle('Support')"><mat-icon class="list-icon">contact_support</mat-icon>Support</a>
+      <a mat-list-item routerLinkActive="active" routerLink="dashboard/enquiry" (click)="updateTitle('Enquiry')"><mat-icon class="list-icon">contact_support</mat-icon>Enquiry</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

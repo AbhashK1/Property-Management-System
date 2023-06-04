@@ -17,8 +17,8 @@
   z-index: 1;
 }
 
-.mat-icon {
-  margin-right: 15px;
+.list-icon {
+  margin-right: 10px;
 }
 
 .mat-list-item {
@@ -34,6 +34,10 @@
 mat-sidenav {
   background: #1967c1;
   color: white;
+}
+
+a{
+  margin-top: 5px;
 }
 
 .flexExpand {
