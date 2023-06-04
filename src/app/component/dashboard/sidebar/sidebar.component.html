@@ -10,11 +10,10 @@
       <a mat-list-item routerLinkActive="active" routerLink="dashboard/sell" (click)="updateTitle('Sell Property')"><mat-icon>savings</mat-icon>Sell Property</a>
       <a mat-list-item routerLinkActive="active" routerLink="dashboard/support" (click)="updateTitle('Support')"><mat-icon>contact_support</mat-icon>Support</a>
       <a mat-list-item routerLinkActive="active" routerLink="dashboard/enquiry" (click)="updateTitle('Enquiry')"><mat-icon>contact_support</mat-icon>Enquiry</a>
-      <a mat-list-item routerLinkActive="active" (click)="logout()"> <mat-icon>logout</mat-icon> Sign out</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" class="toolbar">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -24,6 +23,8 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>{{ title }}</span>
+      <span class="flexExpand"></span>
+      <button mat-mini-fab class="logout" (click)="logout()"><mat-icon>logout</mat-icon></button>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

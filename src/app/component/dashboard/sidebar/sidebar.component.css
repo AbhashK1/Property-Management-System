@@ -35,3 +35,7 @@ mat-sidenav {
   background: #1967c1;
   color: white;
 }
+
+.flexExpand {
+  flex: 1 1 auto;
+}
