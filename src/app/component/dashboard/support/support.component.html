@@ -22,16 +22,11 @@
 <mat-form-field>
   <mat-label>Subject</mat-label>
   <mat-select matInput formControlName="subject">
-    <mat-option value="one">Technical Issue</mat-option>
-    <mat-option value="one">Account Issue</mat-option>
-    <mat-option value="one">Payment Issue</mat-option>
-    <mat-option value="one">General Enquiry</mat-option>
-    <mat-option value="one">Other</mat-option>
-
-
-
-
-    <mat-option value="two"></mat-option>
+    <mat-option value="Technical Issue">Technical Issue</mat-option>
+    <mat-option value="Account Issue">Account Issue</mat-option>
+    <mat-option value="Payment Issue">Payment Issue</mat-option>
+    <mat-option value="General Enquiry">General Enquiry</mat-option>
+    <mat-option value="Other">Other</mat-option>
   </mat-select>
   <mat-error
 *ngIf="contactForm.get('name')?.invalid || contactForm.get('cost')?.dirty || contactForm.get('name')?.touched">Subject is required</mat-error>

@@ -1,0 +1,24 @@
+  <div class="container">
+    <div class="row">
+        <div> <!--class="col-sm-6 col-md-4 mt-3"-->
+            <mat-card *ngFor="let enquiry of enquiryArr">
+              <mat-card-header>
+                <mat-card-title>{{enquiry.subject}}</mat-card-title>
+                <mat-card-subtitle>{{enquiry.name}}</mat-card-subtitle>
+              </mat-card-header>
+              <br>
+              <mat-card-content>
+                <p>
+                  {{enquiry.message}}
+                </p>
+              </mat-card-content>
+              <br>
+              <mat-card-actions>
+                <button mat-button (click)="reply(enquiry.email)">Reply</button>
+                <button mat-button (click)="delete(enquiry.id)">Delete</button>
+              </mat-card-actions>
+            </mat-card>
+            <br>
+        </div>
+    </div>
+  </div>

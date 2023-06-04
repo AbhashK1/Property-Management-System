@@ -6,10 +6,11 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-divider></mat-divider>
     <mat-nav-list>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/home" (click)="updateTitle('Home')"><mat-icon>home</mat-icon>Home</a>
       <a mat-list-item routerLinkActive="active" routerLink="dashboard/buy" (click)="updateTitle('Buy Property')"><mat-icon>store</mat-icon>Buy Property</a>
       <a mat-list-item routerLinkActive="active" routerLink="dashboard/sell" (click)="updateTitle('Sell Property')"><mat-icon>savings</mat-icon>Sell Property</a>
       <a mat-list-item routerLinkActive="active" routerLink="dashboard/support" (click)="updateTitle('Support')"><mat-icon>contact_support</mat-icon>Support</a>
+      <a mat-list-item routerLinkActive="active" routerLink="dashboard/enquiry" (click)="updateTitle('Enquiry')"><mat-icon>contact_support</mat-icon>Enquiry</a>
+      <a mat-list-item routerLinkActive="active" (click)="logout()"> <mat-icon>logout</mat-icon> Sign out</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -24,7 +25,6 @@
       </button>
       <span>{{ title }}</span>
     </mat-toolbar>
-    <!-- Add Content Here -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
