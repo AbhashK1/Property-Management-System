@@ -28,6 +28,7 @@ import { FormsModule, ReactiveFormsModule, FormGroupDirective } from '@angular/f
 import { DeletepropertyComponent } from './component/dashboard/sell/deleteproperty/deleteproperty.component';
 import { ViewpropertyComponent } from './component/dashboard/sell/viewproperty/viewproperty.component';
 import { EnquiryComponent } from './component/dashboard/enquiry/enquiry.component';
+import { LoginComponent } from './component/auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { EnquiryComponent } from './component/dashboard/enquiry/enquiry.componen
     ViewpropertyComponent,
     DeletepropertyComponent,
     EnquiryComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

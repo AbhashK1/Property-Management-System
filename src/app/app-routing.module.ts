@@ -5,9 +5,10 @@ import { SellComponent } from './component/dashboard/sell/sell.component';
 import { SupportComponent } from './component/dashboard/support/support.component';
 import { ViewpropertyComponent } from './component/dashboard/sell/viewproperty/viewproperty.component';
 import { EnquiryComponent } from './component/dashboard/enquiry/enquiry.component';
+import { LoginComponent } from './component/auth/login/login.component';
+import { AuthGuardGuard } from './shared/guard/auth-guard.guard';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'dashboard/buy', pathMatch:'full'},
   {path:'dashboard', children:[
     {path: '', redirectTo: 'buy', pathMatch:'full'},
     {path: 'buy', component: BuyComponent},
@@ -15,7 +16,9 @@ const routes: Routes = [
     {path: 'sell/:id', component: ViewpropertyComponent},
     {path: 'support', component: SupportComponent},
     {path: 'enquiry', component: EnquiryComponent},
-  ]}
+  ], canActivate:[AuthGuardGuard]},
+  {path: '', redirectTo: 'login', pathMatch:'full'}, //dashboard/buy
+  {path: 'login', component: LoginComponent},
 ];
 
 @NgModule({
