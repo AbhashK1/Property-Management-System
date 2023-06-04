@@ -9,25 +9,22 @@ import { AuthService } from 'src/app/shared/service/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  form !: FormGroup;
   email: any = '';
   password: any = '';
+  role:string='';
+  roles: string[] = ['Admin','Buyer','Seller'];
 
   constructor(
-    private authApi : AuthService,
-    private fb : FormBuilder)
-  {
-      this.form = this.fb.group({
-      email : [this.email, [Validators.required, Validators.email]],
-      password : [this.password,[Validators.required]]
-    })
-  }
+    private authApi : AuthService)
+    {}
 
   ngOnInit(): void {
+    this.email='';
+    this.password='';
   }
 
   login() {
-    this.authApi.login(this.form.value.email, this.form.value.password);
+    this.authApi.login(this.email, this.password);
   }
 
 }
