@@ -3,7 +3,7 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false"
-      class="d-flex flex-column flex-shrink-0 p-3">
+      class="d-flex flex-column flex-shrink-0 p-3 mat-elevation-z8">
     <mat-toolbar style="background-color: #1967c1;">Navigation</mat-toolbar>
     <mat-divider></mat-divider>
     <mat-nav-list class="nav nav-pills flex-column mb-auto">
@@ -14,7 +14,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary" class="toolbar">
+    <mat-toolbar color="primary" class="toolbar mat-elevation-z3">
       <button
         type="button"
         aria-label="Toggle sidenav"
