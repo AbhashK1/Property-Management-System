@@ -1,19 +1,20 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="sidenav-container" >
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+      [opened]="(isHandset$ | async) === false"
+      class="d-flex flex-column flex-shrink-0 p-3 mat-elevation-z8">
+    <mat-toolbar style="background-color: #1967c1;">Navigation</mat-toolbar>
     <mat-divider></mat-divider>
-    <mat-nav-list>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/home" (click)="updateTitle('Home')"><mat-icon>home</mat-icon>Home</a>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/buy" (click)="updateTitle('Buy Property')"><mat-icon>store</mat-icon>Buy Property</a>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/sell" (click)="updateTitle('Sell Property')"><mat-icon>savings</mat-icon>Sell Property</a>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/support" (click)="updateTitle('Support')"><mat-icon>contact_support</mat-icon>Support</a>
+    <mat-nav-list class="nav nav-pills flex-column mb-auto">
+      <a mat-list-item routerLinkActive="active" routerLink="dashboard/buy" (click)="updateTitle('Buy Property')"><mat-icon class="list-icon">store</mat-icon>Buy Property</a>
+      <a mat-list-item routerLinkActive="active" routerLink="dashboard/sell" (click)="updateTitle('Sell Property')"><mat-icon class="list-icon">savings</mat-icon>Sell Property</a>
+      <a mat-list-item routerLinkActive="active" routerLink="dashboard/support" (click)="updateTitle('Support')"><mat-icon class="list-icon">contact_support</mat-icon>Support</a>
+      <a mat-list-item routerLinkActive="active" routerLink="dashboard/enquiry" (click)="updateTitle('Enquiry')"><mat-icon class="list-icon">contact_support</mat-icon>Enquiry</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" class="toolbar mat-elevation-z3">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -23,8 +24,9 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>{{ title }}</span>
+      <span class="flexExpand"></span>
+      <button mat-mini-fab class="logout" (click)="logout()"><mat-icon>logout</mat-icon></button>
     </mat-toolbar>
-    <!-- Add Content Here -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

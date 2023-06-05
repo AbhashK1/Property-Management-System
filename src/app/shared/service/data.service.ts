@@ -28,4 +28,17 @@ export class DataService {
     getPropertyById(id:string){
       return this.afs.doc("Property/"+id).valueChanges();
     }
+
+    getAllEnquiry(){
+      return this.afs.collection("enquiry/").snapshotChanges();
+    }
+
+    addenquiry(enquiry:any){
+      enquiry.id=this.afs.createId();
+      return this.afs.collection("enquiry/").add(enquiry);
+    }
+
+    deleteenquiry(id:string){
+      return this.afs.doc("enquiry/"+id).delete();
+    }
 }
