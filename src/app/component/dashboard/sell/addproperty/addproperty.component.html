@@ -58,7 +58,7 @@
           <mat-error *ngIf="form.get('email')?.invalid || form.get('email')?.dirty || form.get('email')?.touched">Enter Valid EmailID</mat-error>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field appearance="outline">
           <mat-label>Image</mat-label>
           <ngx-mat-file-input formControlName="currentFileUpload" placeholder="JPEG Only" [accept]="'.jpg'" (change)="selectFile($event)"></ngx-mat-file-input>
           <mat-icon matSuffix>folder</mat-icon>

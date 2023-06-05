@@ -1,11 +1,12 @@
 export const environment = {
     production: false,
     firebaseConfig : {
-        apiKey: "AIzaSyDPxnow662JXZPEZ1cbk3B8IFIilxb9sGM",
-        authDomain: "proptery-management-system.firebaseapp.com",
-        projectId: "proptery-management-system",
-        storageBucket: "proptery-management-system.appspot.com",
-        messagingSenderId: "873371872280",
-        appId: "1:873371872280:web:b7cbf1a8c4a1caf192a76d",
+        apiKey: "AIzaSyDZIaOvVE8S0slVqXClK1H670ibMFwIVC4",
+        authDomain: "pmss-ee7a2.firebaseapp.com",
+        projectId: "pmss-ee7a2",
+        storageBucket: "pmss-ee7a2.appspot.com",
+        messagingSenderId: "235632830262",
+        appId: "1:235632830262:web:e4942e716cc27dc3863597",
+        measurementId: "G-SHJH3SP1Y8"
       }
   };
