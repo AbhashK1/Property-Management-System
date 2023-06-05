@@ -20,8 +20,8 @@ export class AuthService {
           this.auth.authState.subscribe(async user => {
             if (user) {
               localStorage.setItem('user', JSON.stringify(user));
-              await this.router.navigate(['/dashboard/buy']);
-              location.reload();
+              //await this.router.navigate(['/dashboard/buy']);
+              //location.reload();
               resolve(true); // Credentials are correct
             }
           });

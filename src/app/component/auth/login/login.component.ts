@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/shared/service/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authApi : AuthService,
-    private _snackBar:MatSnackBar)
+    private _snackBar:MatSnackBar,
+    private router : Router
+    )
     {}
 
   ngOnInit(): void {
@@ -26,8 +29,23 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.authApi.login(this.email, this.password).then(result=>{
+    this.authApi.login(this.email, this.password).then(async result=>{
       if(result===true){
+        if(this.role=='Buyer')
+        {
+          await this.router.navigate(['/dashboard/buy']);
+          location.reload();
+        }
+        else if(this.role=='Seller')
+        {
+          await this.router.navigate(['/dashboard/sell']);
+          location.reload();
+        }
+        else
+        {
+          await this.router.navigate(['/dashboard/buy']);
+          location.reload();
+        }
       } else {
         this.openSnackBar("Invalid Credentials","OK");
         this.ngOnInit();
