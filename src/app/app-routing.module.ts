@@ -7,6 +7,7 @@ import { ViewpropertyComponent } from './component/dashboard/sell/viewproperty/v
 import { EnquiryComponent } from './component/dashboard/enquiry/enquiry.component';
 import { LoginComponent } from './component/auth/login/login.component';
 import { AuthGuardGuard } from './shared/guard/auth-guard.guard';
+import { RegistrationComponent } from './component/auth/registration/registration.component';
 
 const routes: Routes = [
   {path:'dashboard', children:[
@@ -19,6 +20,7 @@ const routes: Routes = [
   ], canActivate:[AuthGuardGuard]},
   {path: '', redirectTo: 'login', pathMatch:'full'}, //dashboard/buy
   {path: 'login', component: LoginComponent},
+  {path: 'registration', component: RegistrationComponent},
 ];
 
 @NgModule({
