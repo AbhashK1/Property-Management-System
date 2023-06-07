@@ -8,9 +8,17 @@
     <mat-divider></mat-divider>
     <mat-nav-list class="nav nav-pills flex-column mb-auto">
       <a mat-list-item routerLinkActive="active" routerLink="dashboard/buy" (click)="updateTitle('Buy Property')"><mat-icon class="list-icon">store</mat-icon>Buy Property</a>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/sell" (click)="updateTitle('Sell Property')"><mat-icon class="list-icon">savings</mat-icon>Sell Property</a>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/support" (click)="updateTitle('Support')"><mat-icon class="list-icon">contact_support</mat-icon>Support</a>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/enquiry" (click)="updateTitle('Enquiry')"><mat-icon class="list-icon">contact_support</mat-icon>Enquiry</a>
+      <ng-container *ngIf="isSeller() || isAdmin()">
+        <a mat-list-item routerLinkActive="active" routerLink="dashboard/sell" (click)="updateTitle('Sell Property')"><mat-icon class="list-icon">savings</mat-icon>Sell Property</a>
+      </ng-container>
+      <ng-container *ngIf="!isAdmin()">
+        <a mat-list-item routerLinkActive="active" routerLink="dashboard/support" (click)="updateTitle('Support')"><mat-icon class="list-icon">contact_support</mat-icon>Support</a>
+      </ng-container>
+      <ng-container *ngIf="isAdmin()">
+        <a mat-list-item routerLinkActive="active" routerLink="dashboard/enquiry" (click)="updateTitle('Enquiry')">
+          <mat-icon class="list-icon">contact_support</mat-icon>Enquiry
+        </a>
+      </ng-container>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

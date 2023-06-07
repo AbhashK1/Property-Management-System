@@ -38,11 +38,12 @@ export class LoginComponent implements OnInit {
         }
         else if(this.role=='Seller')
         {
+          localStorage.setItem('isSeller', 'true');
           await this.router.navigate(['/dashboard/sell']);
           location.reload();
         }
-        else
-        {
+        else if(this.role=="Admin"){
+          localStorage.setItem('isAdmin', 'true');
           await this.router.navigate(['/dashboard/buy']);
           location.reload();
         }
