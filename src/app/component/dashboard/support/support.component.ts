@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { AngularFirestore,AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { DataService } from 'src/app/shared/service/data.service';

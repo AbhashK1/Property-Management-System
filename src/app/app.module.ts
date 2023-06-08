@@ -31,6 +31,8 @@ import { EnquiryComponent } from './component/dashboard/enquiry/enquiry.componen
 import { LoginComponent } from './component/auth/login/login.component';
 import { RegistrationComponent } from './component/auth/registration/registration.component';
 import { VerifyComponent } from './component/auth/verify/verify.component';
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -65,7 +67,8 @@ import { VerifyComponent } from './component/auth/verify/verify.component';
     ReactiveFormsModule,
     FormsModule,
     AngularFireDatabaseModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

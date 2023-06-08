@@ -1,18 +1,36 @@
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 col-md-4 mt-3">
-        <mat-grid-list cols="3" [gutterSize]="'10px'">
-          <mat-grid-tile *ngFor="let tile of tiles" (click)="viewproperty(tile.id)">
-            <div class="image-container">
-              <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvcGVydHl8ZW58MHx8MHx8&w=1000&q=80"><br>
-            </div>
-            <div class="name-container"><div class="card-body">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-4 mt-3">
+      <div class="filter-container" style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start; ">
+        <mat-form-field appearance="outline" class="filter-field" style="width: 120px;">
+          <mat-label>Filter By</mat-label>
+          <mat-select [(ngModel)]="selectedFilter" (selectionChange)="applyFilters()">
+            <mat-option value="cost">Cost</mat-option>
+            <mat-option value="location">Location</mat-option>
+            <mat-option value="type">Type</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="filter-field" style="margin-left: 8px">
+          <mat-label>Value</mat-label>
+          <input matInput type="text" [(ngModel)]="filterValue" (keyup)="applyFilters()">
+        </mat-form-field>
+      </div>
+
+      <mat-grid-list cols="3" [gutterSize]="'10px'">
+        <mat-grid-tile *ngFor="let tile of filteredTiles" (click)="viewproperty(tile.id)">
+          <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvcGVydHl8ZW58MHx8MHx8&w=1000&q=80"><br>
+          </div>
+          <div class="name-container">
+            <div class="card-body">
               <p class="card-title">₹{{tile.cost}}</p>
               <p class="card-text">{{tile.location}}</p>
-            </div></div>
-          </mat-grid-tile>
-        </mat-grid-list>
-      </div>
+              <p class="card-text">{{tile.type}}</p>
+            </div>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
     </div>
   </div>
+</div>
