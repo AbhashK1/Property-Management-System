@@ -27,7 +27,19 @@ export class SidebarComponent{
       private authApi : AuthService) {}
   
     logout() {
+      localStorage.setItem('isAdmin', 'false');
+      localStorage.setItem('isSeller', 'false');
       this.authApi.logout();
     }
+
+    isAdmin(): boolean {
+      const isAdmin = localStorage.getItem('isAdmin');
+      return isAdmin === 'true';
+    }   
+    
+    isSeller(): boolean {
+      const isSeller = localStorage.getItem('isSeller');
+      return isSeller === 'true';
+    } 
 
 }
