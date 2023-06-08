@@ -29,6 +29,8 @@ import { DeletepropertyComponent } from './component/dashboard/sell/deleteproper
 import { ViewpropertyComponent } from './component/dashboard/sell/viewproperty/viewproperty.component';
 import { EnquiryComponent } from './component/dashboard/enquiry/enquiry.component';
 import { LoginComponent } from './component/auth/login/login.component';
+import { RegistrationComponent } from './component/auth/registration/registration.component';
+import { VerifyComponent } from './component/auth/verify/verify.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { LoginComponent } from './component/auth/login/login.component';
     DeletepropertyComponent,
     EnquiryComponent,
     LoginComponent,
+    RegistrationComponent,
+    VerifyComponent,
   ],
   imports: [
     BrowserModule,
