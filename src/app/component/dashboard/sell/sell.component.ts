@@ -66,6 +66,7 @@ export class SellComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(data =>{
       if(data){
+        console.log(data);
         this.dataApi.addproperty(data);
         this.openSnackBar("Registration Successful","Ok");
       }

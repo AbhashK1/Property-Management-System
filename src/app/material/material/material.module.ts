@@ -17,6 +17,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatMenuModule} from '@angular/material/menu';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [],
   imports: [
@@ -37,7 +38,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatPaginatorModule,
     MatMenuModule,
     MaterialFileInputModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatProgressSpinnerModule,
   ],
   exports:[
     MatGridListModule,
@@ -57,7 +59,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatPaginatorModule,
     MatMenuModule,
     MaterialFileInputModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatProgressSpinnerModule,
   ]
 })
 export class MaterialModule { }

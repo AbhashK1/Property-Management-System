@@ -24,7 +24,7 @@ export class AddpropertyComponent implements OnInit{
   url!:string;
   buttonName!:string;
   selectedFiles?: FileList;
-  currentFileUpload?: FileUpload;
+  currentFileUpload?: string;
 
   types: string[] =['Flat 2BHK','Flat 3BHK', 'House','PentHouse','Duplex'];
 
@@ -56,6 +56,7 @@ export class AddpropertyComponent implements OnInit{
       type:[this.type,[Validators.required]],
       location:[this.location,[Validators.required]],
       cost:[this.cost,[Validators.required]],
+      url:[this.url],
     })
   }
 
@@ -63,30 +64,43 @@ export class AddpropertyComponent implements OnInit{
     this.selectedFiles = event.target.files;
   }
 
-  upload():void{
-    if(this.selectedFiles){
-      const file:File | null = this.selectedFiles.item(0);
-      this.selectedFiles=undefined;
-      if(file){
-        this.currentFileUpload=new FileUpload(file);
-        this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(
-          percentage=>{
-            console.log(percentage);
+  isUploading=false;
+  isUploadComplete=false;
+
+  upload(): void {
+    this.isUploading = true;
+    this.isUploadComplete = false;
+    if (this.selectedFiles) {
+      const file: File | null = this.selectedFiles.item(0);
+      this.selectedFiles = undefined;
+      if (file) {
+        const fileUpload = new FileUpload(file);
+        this.uploadService.pushFileToStorage(fileUpload).subscribe(
+          percentage => {
+            //console.log(percentage);
           },
-          error =>{
+          error => {
             console.log(error);
+          },
+          () => {
+            //console.log('Upload complete');
+            //console.log('File URL:', fileUpload.url); 
+            this.form.controls['url'].setValue(fileUpload.url);
+            this.isUploading = false;
+            this.isUploadComplete = true;// Access the URL of the uploaded file
           }
-        )
+        );
       }
     }
   }
+  
 
   cancelRegistration(){
     this.dialogRef.close();
   }
 
   registerProperty(){
-    this.upload();
+    //this.upload();
     this.dialogRef.close(this.form.value);
   }
 }

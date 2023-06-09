@@ -64,6 +64,16 @@
           <mat-icon matSuffix>folder</mat-icon>
         </mat-form-field>
 
+        <button class="button-17" (click)="upload()" [disabled]="isUploading">
+          <ng-container *ngIf="!isUploadComplete; else uploadCompleteTemplate">
+            Upload
+            <mat-spinner diameter="20" *ngIf="isUploading"></mat-spinner>
+          </ng-container>
+          <ng-template #uploadCompleteTemplate>
+            <mat-icon>done</mat-icon>
+          </ng-template>
+        </button>
+
       </div>
     </mat-grid-tile>
   </mat-grid-list>
