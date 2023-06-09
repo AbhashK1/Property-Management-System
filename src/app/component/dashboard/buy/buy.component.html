@@ -20,7 +20,7 @@
       <mat-grid-list cols="3" [gutterSize]="'10px'">
         <mat-grid-tile *ngFor="let tile of filteredTiles" (click)="viewproperty(tile.id)">
           <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvcGVydHl8ZW58MHx8MHx8&w=1000&q=80"><br>
+            <img [src]="tile.imageUrl"><br>
           </div>
           <div class="name-container">
             <div class="card-body">

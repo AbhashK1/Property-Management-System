@@ -33,7 +33,6 @@ import { RegistrationComponent } from './component/auth/registration/registratio
 import { VerifyComponent } from './component/auth/verify/verify.component';
 import { MatSelectModule } from '@angular/material/select';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +67,7 @@ import { MatSelectModule } from '@angular/material/select';
     FormsModule,
     AngularFireDatabaseModule,
     AngularFireStorageModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
