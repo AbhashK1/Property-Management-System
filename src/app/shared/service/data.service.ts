@@ -41,4 +41,9 @@ export class DataService {
     deleteenquiry(id:string){
       return this.afs.doc("enquiry/"+id).delete();
     }
+
+    addcallback(callback:any){
+      callback.id=this.afs.createId();
+      return this.afs.collection("callback/").add(callback);
+    }
 }

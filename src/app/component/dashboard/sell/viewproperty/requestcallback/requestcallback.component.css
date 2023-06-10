@@ -1,0 +1,35 @@
+.container{
+    width: auto;
+    height: auto;
+    margin: 20px;
+    padding: 10px;
+}
+
+input,
+    button {
+      width: 100%;
+      border: none;
+      padding: 14px;
+      border-radius: 3px;
+    }
+
+    input {
+      border: 2px solid #DADDEC;
+      margin: 5px 0 10px;
+      font-size: 1rem;
+      color: #656880;
+    }
+
+    button {
+      background-image: linear-gradient(to right, #89CAFF, #6589FF);
+      display: block;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 5px 20px #89caff94;
+      transition: box-shadow .3s ease-in-out;
+    }
+
+    button:hover {
+      box-shadow: none;
+    }

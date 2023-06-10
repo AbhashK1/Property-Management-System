@@ -1,4 +1,4 @@
-<h2 style="font-weight: 700;" class="m-3" color="primary">Property Information</h2>
+<h2 style="font-weight: 700; margin-left: 20px;" class="m-3" color="primary">Property Information</h2>
 <mat-card class="m-3 p-3">
   <mat-card-title>
     {{propertyObj?.p_name}}
@@ -24,3 +24,9 @@
       </div>
     </div>
 </mat-card>
+<ng-container *ngIf="!isSeller()">
+  <button class="button-17" (click)="contactSeller()" ngI>Contact Seller</button>
+</ng-container>
+<ng-container *ngIf="!isSeller()">
+  <button class="button-17" (click)="requestCallback()" ngI>Request Callback</button>
+</ng-container>

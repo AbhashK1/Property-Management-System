@@ -32,6 +32,7 @@ import { LoginComponent } from './component/auth/login/login.component';
 import { RegistrationComponent } from './component/auth/registration/registration.component';
 import { VerifyComponent } from './component/auth/verify/verify.component';
 import { MatSelectModule } from '@angular/material/select';
+import { RequestcallbackComponent } from './component/dashboard/sell/viewproperty/requestcallback/requestcallback.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { MatSelectModule } from '@angular/material/select';
     LoginComponent,
     RegistrationComponent,
     VerifyComponent,
+    RequestcallbackComponent,
   ],
   imports: [
     BrowserModule,
