@@ -8,7 +8,7 @@ This is a Property Management System built with Angular and Firebase. The applic
 - Sell Property: Keep track of sellers, including their contact information.
 - Maintenance Requests: Receive and manage support requests from buyers and sellers.
 - User Authentication: Secure user registration and login functionality.
-- Role-Based Access Control: Control access to different features based on user roles (e.g., property manager, technician, tenant).
+- Role-Based Access Control: Control access to different features based on user roles (e.g., buyer, seller, admin).
 
 ## Technologies Used
 
